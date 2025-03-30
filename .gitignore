@@ -15,3 +15,7 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+#Essas são as pastas que serão criadas após a execução do programa: 
+anexos_ans
+compactado.zip
+compactado
