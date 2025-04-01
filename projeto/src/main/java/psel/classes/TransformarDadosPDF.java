@@ -27,7 +27,7 @@ public class TransformarDadosPDF {
     private FileWriter  writer; 
 
     private static Path pastaArquivos = Paths.get("anexos_csv");
-    private static Path zipPath = Paths.get("Teste_Natalia_santos.zip");
+    private static Path zipPath = Paths.get("anexos_csv/Teste_Natalia_santos.zip");
     
     public TransformarDadosPDF() {
     }
@@ -35,6 +35,8 @@ public class TransformarDadosPDF {
     public void transformarDados() throws  IOException{
         Download download = new Download();
         download.criarDiretorio(pastaArquivos);
+        CompactarArquivo compactar = new CompactarArquivo();
+        compactar.compactarArquivosZip(pastaArquivos, zipPath);
 
         writer = new FileWriter(nomeArquivo);
 
