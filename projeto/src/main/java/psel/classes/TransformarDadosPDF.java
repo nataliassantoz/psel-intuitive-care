@@ -3,10 +3,14 @@ package psel.classes;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.apache.pdfbox.pdmodel.PDDocument;
 
+import psel.classes.utils.CompactarArquivo;
+import psel.classes.utils.Download;
 import technology.tabula.ObjectExtractor;
 import technology.tabula.Page;
 import technology.tabula.PageIterator;
@@ -18,18 +22,25 @@ import technology.tabula.extractors.SpreadsheetExtractionAlgorithm;
 
 public class TransformarDadosPDF {
 
-    private String nomeArquivo = "dados_extraidos.csv";
+    private String nomeArquivo = "anexos_csv/dados_extraidos.csv";
 
     private FileWriter  writer; 
-     
+
+    private static Path pastaArquivos = Paths.get("anexos_csv");
+    private static Path zipPath = Paths.get("Teste_Natalia_santos.zip");
+    
     public TransformarDadosPDF() {
     }
 
     public void transformarDados() throws  IOException{
+        Download download = new Download();
+        download.criarDiretorio(pastaArquivos);
+
         writer = new FileWriter(nomeArquivo);
 
         extrairDados();
         writer.close();
+        
     }
 
     private void extrairDados() throws  IOException {
@@ -83,6 +94,12 @@ public class TransformarDadosPDF {
     private void escreverCabecalho() throws  IOException{
         String texto = "PROCEDIMENTO, RN(alteração), VIGÊNCIA, Seg. Odontológica, Seg. Ambulatorial, HCO, HSO, REF, PAC, DUT, SUBGRUPO, GRUPO, CAPÍTULO,\n";
         writer.write(texto);
+    }
+
+    private void compactarCSV(){
+        CompactarArquivo compactar = new CompactarArquivo();
+        compactar.compactarArquivosZip(pastaArquivos, zipPath);
+
     }
 
 
