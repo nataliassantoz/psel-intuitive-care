@@ -17,11 +17,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-public class DownloadPDF {
+public class Download {
 
     private String URLpdfs = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos";
 
-    public DownloadPDF() {
+    public Download() {
     }
 
     public void download(Path pastaArquivos, Path zipPath) throws Exception{
@@ -91,7 +91,7 @@ public class DownloadPDF {
         }
     }
 
-    public void criarDiretorio(Path diretorioPai) throws Exception  {
+    public void criarDiretorio(Path diretorioPai) throws IOException {
     
         if (diretorioPai != null) {
             try {

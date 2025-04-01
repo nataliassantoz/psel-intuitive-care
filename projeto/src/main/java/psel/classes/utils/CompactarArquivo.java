@@ -8,12 +8,12 @@ import java.nio.file.Path;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class CompactarPDF {
+public class CompactarArquivo {
 
-    public CompactarPDF() {
+    public CompactarArquivo() {
     }
 
-    public void compactarArquivos(Path pastaArquivos, Path zipPath) {
+    public void compactarArquivosZip(Path pastaArquivos, Path zipPath) {
 
         try{
             DirectoryStream<Path> pdfs = Files.newDirectoryStream(pastaArquivos);
