@@ -22,12 +22,12 @@ import technology.tabula.extractors.SpreadsheetExtractionAlgorithm;
 
 public class TransformarDadosPDF {
 
-    private String nomeArquivo = "anexos_csv/dados_extraidos.csv";
+    private String nomeArquivo = "../anexos_csv/dados_extraidos.csv";
 
     private FileWriter  writer; 
 
-    private static Path pastaArquivos = Paths.get("anexos_csv");
-    private static Path zipPath = Paths.get("anexos_csv/Teste_Natalia_santos.zip");
+    private static Path pastaArquivos = Paths.get("../anexos_csv");
+    private static Path zipPath = Paths.get("../anexos_csv/Teste_Natalia_santos.zip");
     
     public TransformarDadosPDF() {
     }
