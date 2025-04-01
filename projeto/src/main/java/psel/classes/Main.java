@@ -18,6 +18,9 @@ public class Main {
         downloadPDF.download(pastaArquivos, zipPath);
         CompactarPDF compactarArquivos = new CompactarPDF();
         compactarArquivos.compactarArquivos(pastaArquivos, zipPath);
+        TransformarDadosPDF transformarDados = new TransformarDadosPDF();
+        transformarDados.transformarDados();
+
         
     }
 }
