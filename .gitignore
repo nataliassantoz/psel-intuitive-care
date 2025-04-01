@@ -17,7 +17,6 @@ buildNumber.properties
 .classpath
 #Essas são as pastas que serão criadas após a execução do programa: 
 anexos_ans
-compactado.zip
-compactado
-dados_extraidos.csv
+anexos_csv
+
 
