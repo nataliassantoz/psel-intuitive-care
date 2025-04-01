@@ -14,17 +14,8 @@ buildNumber.properties
 # Eclipse Core
 .project
 # JDT-specific (Eclipse Java Development Tools)
-
 .classpath
 #Essas são as pastas que serão criadas após a execução do programa: 
 anexos_ans
-<<<<<<< Updated upstream
-compactado.zip
-compactado
-dados_extraidos.csv
-=======
-#
 anexos_csv
-
->>>>>>> Stashed changes
 
