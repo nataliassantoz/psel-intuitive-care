@@ -21,6 +21,7 @@ public class Download {
 
     private String URLpdfs = "https://www.gov.br/ans/pt-br/acesso-a-informacao/participacao-da-sociedade/atualizacao-do-rol-de-procedimentos";
 
+
     public Download() {
     }
 
@@ -32,7 +33,9 @@ public class Download {
                         .header("Accept-Language", "*")
                         .get();
      
+        
         Elements links = doc.select("a[href$=.pdf]");
+
         for (Element link : links) {
 
             String href = link.attr("href");  
