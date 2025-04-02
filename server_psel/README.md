@@ -1,0 +1,3 @@
+- Rode: python -m venv venv
+- Windows: venv\Scripts\activate
+- unix: source venv/bin/activate
