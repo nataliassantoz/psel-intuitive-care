@@ -35,20 +35,24 @@ public class TransformarDadosPDF {
     public void transformarDados() throws  IOException{
         Download download = new Download();
         download.criarDiretorio(pastaArquivos);
+
+        writer = new FileWriter(nomeArquivo);
+       extrairDados();
+        writer.close();
         CompactarArquivo compactar = new CompactarArquivo();
         compactar.compactarArquivosZip(pastaArquivos, zipPath);
 
-        writer = new FileWriter(nomeArquivo);
+        
 
-        extrairDados();
-        writer.close();
+        
+        
         
     }
 
     private void extrairDados() throws  IOException {
         escreverCabecalho();
 
-        File pdf = new File("anexos_ans/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf");
+        File pdf = new File("../anexos_ans/Anexo_I_Rol_2021RN_465.2021_RN627L.2024.pdf");
         PDDocument documentoPDF = PDDocument.load(pdf);
 
         SpreadsheetExtractionAlgorithm sea = new SpreadsheetExtractionAlgorithm();
