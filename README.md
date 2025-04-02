@@ -1,7 +1,7 @@
 # 📌 Projeto de Testes de Nivelamento - ANS
 
 Este repositório contém a implementação das tarefas propostas no documento **TESTES DE NIVELAMENTO**. As atividades estão divididas em quatro tarefas principais: *web scraping*, transformação de dados, banco de dados e desenvolvimento de *API*.
-
+As atividades estão separadas por branches, de forma que o teste 1 está na branch feature/1-teste-web-projeto, o teste 2 está na feature/2-teste-transformacao-dados, o teste 3 está na feature/3-banco-de-dados e, por fim, o teste 4 está na feature/4-teste-API.
 > ✅ **Tecnologia utilizada:** Java 17
 
 ---
