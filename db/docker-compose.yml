@@ -9,7 +9,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_DB: ans_relatorios
-      POSTGRES_USER: admin
+      POSTGRES_USER: admin  #foi fornecido a senha, apenas para fins de teste.
       POSTGRES_PASSWORD: admin
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
