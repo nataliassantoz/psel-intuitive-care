@@ -18,4 +18,5 @@ buildNumber.properties
 #Essas são as pastas que serão criadas após a execução do programa: 
 anexos_ans
 anexos_csv
+server_psel/venv/
 
