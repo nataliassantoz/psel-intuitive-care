@@ -1,4 +1,4 @@
-![FIG2](https://github.com/user-attachments/assets/36aa4e00-1e43-4918-afbb-ec608fc60978)
+
 
 # 📌 Projeto de Testes de Nivelamento - ANS
 
