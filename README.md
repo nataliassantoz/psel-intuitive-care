@@ -1,8 +1,33 @@
+
+
 # 📌 Projeto de Testes de Nivelamento - ANS
 
-Este repositório contém a implementação das tarefas propostas no documento **TESTES DE NIVELAMENTO**. As atividades estão divididas em quatro tarefas principais: *web scraping*, transformação de dados, banco de dados e desenvolvimento de *API*.
+Este repositório contém a implementação das tarefas propostas no documento **TESTES DE NIVELAMENTO**.  
 
-> ✅ **Tecnologia utilizada:** Java 17
+As atividades estão organizadas em quatro tarefas principais:  
+
+1. **Web Scraping**  
+2. **Transformação de Dados**  
+3. **Banco de Dados**  
+4. **Desenvolvimento de API e interface WEB**  
+
+Cada atividade está separada em branches específicas:  
+
+- **Teste 1** → `feature/1-teste-web-projeto`  
+- **Teste 2** → `feature/2-teste-transformacao-dados`  
+- **Teste 3** → `feature/3-banco-de-dados`  
+- **Teste 4** → `feature/4-teste-API`
+- **Teste 4.2** → `feature/5-interface-web`
+
+Todo o processo de gitflow foi tomado a partir de aberturas de pull requests, segue o link: https://github.com/nataliassantoz/psel-intuitive-care/pulls?q=is%3Apr+is%3Aclosed
+# Tecnologias Utilizadas
+
+✅ **Java** - Versão 17  
+✅ **Python** - Versão 3  
+✅ **PostgreSQL** - Versão 15.12  
+✅ **Vue.js**  - versão 5.0.8  
+✅ **Docker** - Versão Docker Compose v2.34.0  
+
 
 ---
 
@@ -18,6 +43,7 @@ mvn clean
  ```
 mvn install
 ```
+Posteriormente é só executar a main, na IDE.  
 3. A execução gerará automaticamente:
    - A pasta `anexos_ans/`, contendo os arquivos Anexo I e Anexo II (em PDF), além do arquivo compactado (.zip).
    - A pasta `anexos_csv/`, contendo o arquivo `.csv` transformado conforme solicitado, com os dados extraídos do Anexo I, e seu respectivo `.zip`.
@@ -32,16 +58,16 @@ mvn install
 cd db/
 ```
 
-2. **Necessário**: Antes de subir os containers, limpe os volumes e imagens anteriores com:
+2. Necessário: Antes de subir os containers, limpe os volumes e imagens anteriores com:
 
 ```bash
-docker-compose down --rmi all --volumes --remove-orphans
+docker-compose down --rmi all --volumes --remove-orphans ou docker compose down
 ```
 
 3. Em seguida, construa e suba os containers com:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 > Isso irá configurar um banco de dados PostgreSQL e executar os scripts de criação e povoamento do banco com dados públicos da ANS.
@@ -53,7 +79,7 @@ docker-compose up --build
 ### ⚙️ Tarefa 4 — API
 1. Antes de executar os testes da Tarefa 4, é necessário configurar um ambiente virtual com Python. Siga os passos abaixo conforme seu sistema operacional:
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 > Esse comando cria uma pasta chamada venv/, que conterá os arquivos do ambiente isolado.
 
@@ -62,7 +88,7 @@ python -m venv venv
  ```bash
 venv\Scripts\activate
 ```
-4. 🐧 Linux / 🧑‍🍳 macOS:
+4. 🐧 Linux /  macOS:
  ```bash
 source venv/bin/activate
 ```
@@ -76,7 +102,28 @@ pip install -r requirements.txt
 ```bash
 python server.py
 ```
-O servidor estará disponível em `http://localhost:8080`.
+O servidor estará disponível em `http://localhost:8080`.    
+
+7. para consumir a API e integrar o servidor python ao frontend, é necessário rodar o vue.js (**com as aplicações anteriores rodando - docker e servidor python**), primeiramente acesse o diretorio do frontend em:
+
+``` bash
+cd frontend
+```
+
+No diretorio correto nstale as dependencias com o comando:
+```bash
+npm install
+```
+
+Logo após é necessário rodar o script de desenvolvimento com:
+```bash
+npm run dev 
+```
+O vue.js irá rodar na porta 5173. Feito os procedimentos, basta abrir no navegador e acessar:
+```bash
+http://localhost:5173/
+```
+
 ---
 
 ## 🧪 Testes via Postman
@@ -201,6 +248,14 @@ GROUP BY reg_ans, razao_social
 ORDER BY total_despesa_anual DESC
 LIMIT 10;
 ```
+## 🧪 Interface Web
+
+A rota http://localhost:8080/operadoras/busca?termo=*busca*, pode realizar busca e finalizar pelo botão, conforme o exemplo abaixo:
+
+A rota http://localhost:8080/despesas/trimestrais, Retorna as 10 operadoras com maiores despesas último trimestre de 2024.
+
+A rota http://localhost:8080/despesas/anuais Retorna as 10 operadoras com maiores despesas em 2024.
+
 
 ---
 
@@ -209,4 +264,3 @@ LIMIT 10;
 - Todos os dados utilizados são públicos e extraídos dos portais oficiais da ANS.
 - A senha as credenciais de banco de dados poderiam estar em um .env mas para fim de testes preferi deixar diretamente no código.
 
-- O projeto foi desenvolvido em **Java 17**.
