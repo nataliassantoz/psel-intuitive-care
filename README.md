@@ -1,4 +1,4 @@
-
+![FIG2](https://github.com/user-attachments/assets/36aa4e00-1e43-4918-afbb-ec608fc60978)
 
 # 📌 Projeto de Testes de Nivelamento - ANS
 
@@ -252,9 +252,16 @@ LIMIT 10;
 
 A rota http://localhost:8080/operadoras/busca?termo=*busca*, pode realizar busca e finalizar pelo botão, conforme o exemplo abaixo:
 
+![FIG1](https://github.com/user-attachments/assets/5305e013-55c2-43b5-961c-5c9fbe701e9f)
+
 A rota http://localhost:8080/despesas/trimestrais, Retorna as 10 operadoras com maiores despesas último trimestre de 2024.
+![FIG2](https://github.com/user-attachments/assets/97552012-aa02-4579-8755-aa332580b1fe)
+
 
 A rota http://localhost:8080/despesas/anuais Retorna as 10 operadoras com maiores despesas em 2024.
+
+![FIG3](https://github.com/user-attachments/assets/5064a63c-9760-4e3a-88a0-97a63a81a843)
+
 
 
 ---
