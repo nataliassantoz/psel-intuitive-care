@@ -20,4 +20,5 @@ anexos_ans
 anexos_csv
 server_psel/venv/
 venv
-
+node_modules
+.vscode
